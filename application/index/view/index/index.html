@@ -1,0 +1,19 @@
+{extend name="frameset" /}
+
+{block name="link"}
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/index.css">
+{/block}
+
+{block name="content"}
+<div class="content">
+    <h1>The best time to plant a tree is ten years ago, followed by now.</h1>
+    <div class="btn-container">
+        <a href="{:url('index/article')}" class="btn light-btn">View all articles</a>
+        {empty name="user_name"}
+        <a href="{:url('index/login', ['scene'=>'sign'])}" class="btn dark-btn">Sign Up</a>
+        {else /}
+        {/empty}
+    </div>
+</div>
+{/block}

@@ -1,0 +1,30 @@
+{extend name="frameset"}
+
+{block name="link"}
+    <title>Detail</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/index.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/article.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/home/css/detail.css">
+{/block}
+
+{block name="content"}
+    <div class="content con-detail">
+        <div class="detail-container">
+            <div class="con-title">{$detail.title}</div>
+            <ul class="con-list">
+                <li>Author: {$detail.uname}</li>
+                <svg style="margin:0 8px;" height="5" width="5" fill="#8a8a8a" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 84 84" data-reactid="246"><circle class="circle-obj" cx="42" cy="42" r="40" stroke="#8a8a8a" stroke-width="4" fill="#8a8a8a"></circle></svg>
+                <li>Created: {$detail.create_time}</li>
+                <svg style="margin:0 8px;" height="5" width="5" fill="#8a8a8a" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 84 84" data-reactid="246"><circle class="circle-obj" cx="42" cy="42" r="40" stroke="#8a8a8a" stroke-width="4" fill="#8a8a8a"></circle></svg>
+                <li>Update: {$detail.update_time}</li>
+            </ul>
+            <div class="con-content">{$detail.content}</div>
+            <div class="btn-container">
+                {empty name="user_name"}
+                <a href="{:url('index/login', ['scene'=>'sign'])}" class="btn dark-btn">Sign Up</a>
+                {else /}
+                {/empty}
+            </div>
+        </div>
+    </div>
+{/block}
