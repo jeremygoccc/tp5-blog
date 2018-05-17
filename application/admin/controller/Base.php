@@ -9,6 +9,9 @@ class Base extends Controller {
     }
 
     public function _initialize() {
+        $res = model("index/Category")->getDire();
+        $this->assign('caDire',$res);
+
         if(session("?u_status")) {
             $u_status = session('u_status');
             $this->assign('u_status', $u_status);

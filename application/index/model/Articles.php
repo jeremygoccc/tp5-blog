@@ -51,6 +51,7 @@ class Articles extends Model {
        foreach ($res as $key => $value) {
             $arr[] = $value->toArray();
        }
+       // var_dump($id);
        return $arr;
     }
 
